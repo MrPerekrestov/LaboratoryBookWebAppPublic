@@ -1,0 +1,109 @@
+﻿@model AddRowModel
+@{
+    var selectList = new[] {
+        "material",
+        "substrate",
+        "operator",
+        "regime",
+        "permissionID"
+    };
+}
+    <div class="add-row-container-inner" id="addRowContainerInner">
+        @foreach (var column in Model.Columns)
+        {
+            if (column == "sampleID")
+            {
+                <label class="padding" for="@column">@(column)*</label>
+                <input class="padding" type="text" name="@column" value="@Model.RowId" spellcheck="false" />
+            }
+            else if (selectList.Contains(column))
+            {
+
+
+                @if (column == "material")
+                {
+                    <label class="padding" for="@column">@column</label>
+                    <select name="@column" class="padding">
+                        @foreach (var item in Model.Materials)
+                        {
+                            <option value="@item">@item</option>
+                        }
+                    </select>
+                }
+                @if (column == "substrate")
+                {
+                    <label class="padding" for="@column">@column</label>
+                    <select name="@column" class="padding">
+                        @foreach (var item in Model.Substrates)
+                        {
+                            <option value="@item">@item</option>
+                        }
+                    </select>
+                }
+                @if (column == "operator")
+                {
+                    <label class="padding" for="@column">@(column)*</label>
+                    <select name="@column" class="padding">
+                        @{var userName = Context.User.Claims.First(user => user.Type == "UserName").Value;
+                        }
+
+                        @foreach (var item in Model.Operators)
+                        {
+                            if (!(item == userName))
+                            {
+                                <option value="@item">@item</option>
+                            }
+                            else
+                            {
+                                <option value="@item" selected>@item</option>
+                            }
+                        }
+                    </select>
+                }
+                @if (column == "regime")
+                {
+                    <label class="padding" for="@column">@column</label>
+                    <select name="@column" class="padding">
+                        @foreach (var item in Model.Regimes)
+                        {
+                            <option value="@item">@item</option>
+                        }
+                        }
+                    </select>
+                }
+                @if (column == "permissionID")
+                {
+                    <label class="padding" for="@column">@(column)*</label>
+                    <select name=@column class="padding">
+                        @foreach (var item in Model.PermissionIDs)
+                        {
+                            <option value="@item">@item</option>
+                        }
+                    </select>
+                }
+
+            }
+            else if (column == "date")
+            {
+                <label class="padding" for="@column">@(column)*</label>
+                <input class="padding" type="text" title="Use yyyy-MM-dd format" name="@column" value="@DateTime.Now.ToString("yyyy-MM-dd")" spellcheck="false" />
+            }
+            else if (column == "depositionTime")
+            {
+                <label class="padding" for="@column">@column</label>
+                <input class="padding" type="text" title="Use hh:mm:ss format" name="@column" value="00:00:00" spellcheck="false" />
+            }
+            else if (column == "description")
+            {
+                <label class="padding" for="@column">@column</label>
+                <textarea class="padding" rows="3" cols="10" name="@column" title="Max length is 64 symbols" spellcheck="false"></textarea>
+            }
+
+            else
+            {
+                <label class="padding" for="@column">@column</label>
+                <input class="padding" type="text" name="@column" value="" spellcheck="false" />
+            }
+
+        }
+    </div>

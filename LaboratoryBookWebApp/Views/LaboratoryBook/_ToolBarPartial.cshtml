@@ -1,0 +1,54 @@
+﻿@model MainPageModel
+
+    <div class="toolbar-container-left">
+        <a class="ui-button ui-widget ui-corner-all padding"
+           id="refreshTableButton"
+           title="Refresh samples table">
+            <img src="~/images/refresh.png" alt="refresh" />
+        </a>
+        <a class="ui-button ui-widget ui-corner-all padding"
+           id="addRowButton"
+           title="Add sample to laboratory book @Model.LaboratoryBookName">
+            <img src="~/images/add_row.png" alt="add_row" />
+        </a>
+        <a class="ui-button ui-widget ui-corner-all padding"
+           id="selectColumnsButton"
+           title="Select visible column">
+            <img src="~/images/select_columns.png" alt="add_row" />
+        </a>
+        <a class="ui-button ui-widget ui-corner-all padding"
+           id="manageUsersButton"
+           title="Manage all available users and create new">
+            <img src="~/images/manage_users.png" alt="manage_users" />
+        </a>
+        <a class="ui-button ui-widget ui-corner-all padding"
+           id="manageDatabase"
+           title="Manage database users, columns and predefined lists">
+            <img src="~/images/manage_databases.png" alt="manage_databases" />
+        </a>
+    </div>
+   
+    <div class="toolbar-container-center">
+        <div class="laboratory-book-name">
+        Laboratory book: @Model.LaboratoryBookName
+        </div>
+    </div>
+
+    <div class="toolbar-container-right">
+        <div>
+            <span>User: <b id="ToolBarUserName"> @Context.User.Claims.FirstOrDefault(claim => claim.Type == "UserName").Value </b></span>
+            <a class="ui-button ui-widget ui-corner-all padding"
+               id="manageUserButton"
+               title="Change user login and password">
+                <img src="~/images/user.png" alt="manage user" />
+            </a>            
+            <a class="ui-button ui-widget ui-corner-all padding"
+               href="/Login/Authentication"
+               title="Logout from this laboratory book">
+                <img src="~/images/signout.png" alt="signout" />
+            </a>
+        </div>
+    </div>
+
+
+

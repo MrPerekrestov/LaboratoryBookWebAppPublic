@@ -1,0 +1,70 @@
+﻿@model MainPageModel
+@{
+    ViewBag.Title = $"Laboratory book {Model.LaboratoryBookName}";
+    Layout = "./Shared/_LaboratoryBookLayout";
+}
+
+<div id="ToolBarAndTableContainer">
+    <div class="toolbar-container">
+        @await Html.PartialAsync("_ToolBarPartial.cshtml", Model)
+    </div>
+
+    <div class="table-container" id="tableContainer">
+        @await Html.PartialAsync("_TablePartial.cshtml", Model.LaboratoryBookData)
+    </div>
+</div>
+<div class="add-row-container"
+     id="addRowContainer"
+     title="Add row"></div>
+<div class="manage-database-container"
+     id="manageDatabaseContainer"
+     title="Manage database"></div>
+<div class="main-page-modify-user-container"
+     id="mainPageModifyUserContainer"
+     title="Modify user"></div>
+<div class="manage-users-container"
+     id="manageUsersContainer"
+     title="Manage users"></div>
+<div class="select-columns-container"
+     id="selectColumnsContainer"
+     title="Select columns">
+</div>
+
+<div class="error-dialog" id="ErrorDialog" title="Error">
+    <img class="dialog-icon" src="~/images/error-icon.png" alt="ErrorIcon" width="50" height="50" />
+    <div style="text-align:center">
+        <p id="ErrorMessage"></p>
+    </div>
+</div>
+
+<div class="question-dialog" id="questionDialog" title="Dialog">
+    <img class="dialog-icon" src="~/images/question-dialog-icon.png" alt="QuestionIcon" width="50" height="50" />
+    <div style="text-align:center">
+        <p id="questionDialogMessage"></p>
+    </div>
+</div>
+
+<div id="loadingAnimationContainer">
+    <img src="~/images/loading-animation.gif" width="150" height="150" alt="loading" />
+</div>
+
+<div id="progressbar-contaier">
+    <p>
+        Loading lists...
+    </p>
+    <div id="progressbar"></div>
+</div>
+
+<script src="~/js/MainPage.js"></script>
+<script src="~/js/MainPageTable.js"></script>
+<script src="~/js/MainPageAddRow.js"></script>
+<script src="~/js/MainPageRefreshTable.js"></script>
+<script src="~/js/MainPageManageDatabase.js"></script>
+<script src="~/js/MainPageManageDatabaseAddUser.js"></script>
+<script src="~/js/MainPageManageDatabaseAddColumn.js"></script>
+<script src="~/js/MainPageManageDatabaseAddListValue.js"></script>
+<script src="~/js/MainPageModifyUser.js"></script>
+<script src="~/js/MainPageModifyUserChangeName.js"></script>
+<script src="~/js/MainPageModifyUserChangePassword.js"></script>
+<script src="~/js/MainPageManageUsers.js"></script>
+<script src="~/js/MainPageSelectColumns.js"></script>

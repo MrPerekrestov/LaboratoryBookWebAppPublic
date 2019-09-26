@@ -1,0 +1,390 @@
+﻿body {
+    display:none;
+    margin: 0px;
+    background: gray;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.login-button {
+    display: inline-block;
+    position: relative;
+    font-size: 18px;
+    padding: 0px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: #f7f7f7;
+    border-color: #f7f7f7;
+    border-style: solid;
+    border-width: 1px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+    .login-button:hover {
+        background: rgba(0, 128, 255, 0.129);
+        border-color: rgba(218, 218, 218, 0.5);
+        border-width: 1px;
+    }
+
+    .login-button:active {
+        background: rgba(0, 128, 255, 0.25);
+        border-color: rgba(0, 108, 217, 0.56);
+        border-width: 1px;
+    }
+
+    .login-button:focus {
+        background: #f7f7f7;
+        border-color: #f7f7f7;
+        border-style: solid;
+        border-width: 1px;
+    }
+
+.toolbar-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: whitesmoke;
+}
+
+.toolbar-container-left {
+    white-space: nowrap;
+}
+
+.toolbar-container-right {
+    white-space: nowrap;
+}
+
+    .toolbar-container-right span {
+        font-family: "Trebuchet MS";
+        font-size: 20px;
+    }
+
+.toolbar-container-center {
+    position: relative;
+}
+
+    .toolbar-container-center div {
+        font-family: "Trebuchet MS";
+        font-size: 26px;
+        white-space: nowrap;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%)
+    }
+
+td {
+    position: relative;
+}
+
+    td input {
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        padding:1px;
+    }
+
+    td select {
+        position: absolute;
+        top: 2px;
+        left: -1px;
+        padding: 1px;
+    }
+
+.table-container {
+    background: lightgray;
+    width: 100%;
+}
+
+.samples_wrapper {
+    width: 99%;
+}
+
+.data-change-text-container {
+    position: absolute;
+    visibility: hidden;
+    z-index: 1;
+    background-color: red;
+}
+
+.table-container-inner {
+    background: white;
+}
+
+.input-search {
+    font-size: 16px;
+    position: relative;
+    width: 150px;
+    top: -15px;
+}
+
+.input-data {
+    width: auto;
+}
+
+.padding {
+    display: inline-block;
+    padding: 4px;
+    margin: 4px;
+}
+
+.dataTables_filter {
+    float: left !important;
+    padding: 4px;
+}
+
+.dataTables_length {
+    float: left !important;
+    padding: 4px;
+}
+#progressbar-contaier {
+    position: absolute;
+    width:300px;
+    top: 50%;
+    text-align:center;
+    padding:4px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color:lightgray;
+    border-style:solid;
+    border-width:1px;
+    border-radius:10px;
+    border-color:black;
+}
+.error-dialog{
+    visibility:hidden;   
+    position:absolute;
+}
+.question-dialog {
+    visibility: hidden;
+    position: absolute;
+}
+#addRowContainer{
+    display:block;
+}
+.dialog-icon {
+    display: inline-block;
+}
+.add-row-container-inner {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.add-row-container-inner {
+    position:absolute;
+}
+.red-border-color{
+    border-color:red;
+    border-width:2px;
+}
+textarea[name=description]{
+    resize:none;
+}
+#loadingAnimationContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 1000;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+}
+.visible{
+    visibility:visible;
+}
+
+/*manage database css*/
+
+
+.manage-database-container {
+    padding: 4px;
+    display:none;
+}
+
+
+.manage-database-container-inner {
+    padding: 4px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgray;
+    border-radius: 4px;
+    position: relative;
+    margin: 2px;
+    margin-top: 15px;
+}
+
+.manage-database-container-inner-title {
+    position: absolute;
+    top: -12px;
+    background-color: white;
+   
+}
+
+.manage-database-container-grid {
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.manage-database-input,
+.manage-database-label,
+.manage-database-select,
+.manage-database-button {
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    margin: 4px;
+    padding: 4px;
+    white-space: nowrap;
+}
+
+.manage-database-select,
+.manage-database-input {
+    width: 150px;
+}
+
+.add-user-container-outer{
+    padding:4px;
+    position:absolute;
+    visibility:hidden;
+}
+
+.add-user-container-inner {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+    .add-user-container-inner > label,
+    .add-user-container-inner > select {
+        padding: 4px;
+        margin: 4px;
+        white-space: nowrap;
+    }
+
+.add-column-container-inner {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+    .add-column-container-inner > label,
+    .add-column-container-inner > select,
+    .add-column-container-inner > input {
+        margin: 4px;
+        padding: 4px;
+        white-space: nowrap;
+    }
+
+.add-column-container-outer{
+    display:none;
+}
+
+.add-listvalue-container-outer {
+   display:none;
+}
+
+.add-list-value-container-inner {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 4px;
+}
+
+    .add-list-value-container-inner >
+    label,
+    .add-list-value-container-inner >
+    input {
+        white-space: nowrap;
+        padding: 4px;
+        margin: 4px;
+    }
+main-page-modify-user-container-outer {
+    display:none;    
+}
+
+.main-page-modify-user-container-inner {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+    .main-page-modify-user-container-inner >
+    div,
+    .main-page-modify-user-container-inner >
+    button,
+    .main-page-modify-user-container-inner >
+    label,
+    .main-page-modify-user-container-inner >
+    input
+    {
+        padding: 4px;
+        margin: 4px;
+        white-space: nowrap;
+    }
+
+#modifyUserChangePasswordCaption {
+    grid-column: 1 /span 3;
+    text-align: center;
+}
+#modifyUserChangeUserName{    
+    display:none;
+}
+.change-user-name-container-inner{
+    display:grid;  
+    grid-template-columns:auto auto;
+}
+    .change-user-name-container-inner > label,
+    .change-user-name-container-inner > input{
+        padding:4px;
+        margin:4px;
+        white-space:nowrap;
+    }
+
+.manage-users-container-inner {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+    .manage-users-container-inner select,
+    .manage-users-container-inner label {
+        padding: 4px;
+        margin: 4px;
+        white-space: nowrap;       
+    }
+    .manage-users-container-inner select {
+        width: 200px;
+    }
+        .manage-users-container {
+            display: none;
+        }
+
+.create-user-container-inner {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+    .create-user-container-inner input,
+    .create-user-container-inner label,
+    .create-user-container-inner select {
+        padding: 4px;
+        margin: 4px;
+    }
+#createUserContainer{
+    display:none;
+}
+
+.select-columns-container-inner {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-items: center;
+}
+
+    .select-columns-container-inner label {
+        justify-self: right;
+        padding: 4px;
+        margin: 4px;
+    }
+
+    .select-columns-container-inner input {
+        justify-self: left;
+        margin: 10px;
+    }
+#selectColumnsContainer{
+    display:none;
+}
+#ToolBarAndTableContainer{
+    display:grid;
+    grid-template-columns:auto;
+}

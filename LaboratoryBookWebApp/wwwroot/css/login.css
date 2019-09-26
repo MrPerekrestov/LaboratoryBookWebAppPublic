@@ -1,0 +1,177 @@
+﻿.login-container {
+    box-shadow: 10px 10px 10px black;
+    background-color: whitesmoke;
+     font-family: "Trebuchet MS";
+     position: absolute;
+    border-radius: 10px;
+    left: 50%;
+    top: 80%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-width: 1px;
+    border-style: solid;
+    font-size: 18px;
+}
+.red{
+    color:red;
+}
+
+.login-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+label {
+    white-space:nowrap;
+    margin: 4px;
+    padding: 4px; 
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+input {
+    margin: 6px;
+    padding: 1px;
+    white-space:nowrap;    
+}
+
+    input[type="text"],
+    input[type="password"] {     
+        font-size: 18px;
+        font-family: "Trebuchet MS", sans-serif;
+    }
+
+select {
+    margin: 4px;
+    padding: 4px;
+}
+
+.login-message {
+    text-align: center;
+    padding: 4px;
+    margin: 4px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    cursor: default;   
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+.login-message-red {
+    color:red;
+    text-align: left;
+    padding: 4px;
+    margin: 4px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    cursor: default;    
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+.transparent {
+    opacity:0;
+}
+.login-message-red-center {
+    color: red;
+    text-align: center;
+    padding: 4px;
+    margin: 4px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    cursor: default;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.login-page-title {
+    padding: 4px;
+    margin: 4px;
+    text-align: center;
+    font-weight: 700;
+    cursor: default;   
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.login-button {
+    font-size: 18px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: lightgray;
+    border-color: black;
+    border-width: 1px;
+}
+
+    .login-button:focus {
+        background: lightgray;
+        border-color: black;
+        border-width: 1px;
+    }
+
+    .login-button:hover {
+        background: #bcddee;
+        border-color: #245a83;
+        border-width: 1px;
+    }
+
+    .login-button:active {
+        background: #bcddee;
+        border-color: black;
+        border-width: 1px;
+    }
+
+    .login-button:checked {
+        background: #bcddee;
+        border-color: black;
+        border-width: 1px;
+    }
+
+    .login-button:disabled {
+        background: lightgray;
+        border-color: darkgray;
+    }
+    .padding-margin{
+        padding:4px;
+        margin:4px;
+    }
+select {
+    font-family: Verdana,Arial,sans-serif;
+    font-size: 1.1em;
+    color:#555555;
+    width:250px;
+}
+#createLaboratoryBookContainer {    
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column: 1 / span 2;
+    justify-items: center;
+    align-items: center;    
+}
+#newLaboratoryBookNameInput {
+    width: 230px;
+    padding: 8px;
+    margin:4px;
+    border: 1px solid #CCCCCC !important;
+}
+
+.error-dialog {
+    display:none;
+}
+
+.question-dialog {
+    display:none;
+}
+#loadingAnimationContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 1000;
+    transform: translate(-50%, -50%);
+    display: none;
+}

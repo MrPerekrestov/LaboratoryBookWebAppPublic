@@ -1,0 +1,38 @@
+﻿@model ModifyUserViewModel
+    <div class="main-page-modify-user-container-inner">
+        <div>User name: </div>
+        <div id="modifyUserUserNameDiv">@Model.UserName</div>
+        <button class="ui-button ui-corner-all manage-database-button"
+                id="modifyUserChangeNameButton">
+            Change
+        </button>
+        <div>User status: </div>
+        <div>@Model.UserStatus</div>
+        <div></div>
+        <div>Permission: </div>
+        <div>@User.Claims.First(claim=>claim.Type =="Permission").Value</div>
+        <div></div>
+        <div id="modifyUserChangePasswordCaption"><b>Change password</b></div>
+        <label for="modifyUserOldPasswordInput">Old password: </label>
+        <input type="password"
+               name="modifyUserOldPasswordInput"
+               id="modifyUserOldPasswordInput"
+               autocomplete="new-password">
+        <div></div>
+        <label for="modifyUserNewPasswordInput">New password:</label>
+        <input type="password"
+               name="modifyUserNewPasswordInput"
+               id="modifyUserNewPasswordInput"
+               autocomplete="new-password" />
+        <div></div>
+        <label for="modifyUserRepeatNewPasswordInput">Repeat password: </label>
+        <input type="password"
+               name="modifyUserRepeatNewPasswordInput"
+               id="modifyUserRepeatNewPasswordInput"
+               autocomplete="new-password">
+        <button id="modifyUserChangePasswordButton"
+                class="ui-button ui-corner-all manage-database-button">
+            Change
+        </button>
+    </div>
+<div id="modifyUserChangeUserName"></div>

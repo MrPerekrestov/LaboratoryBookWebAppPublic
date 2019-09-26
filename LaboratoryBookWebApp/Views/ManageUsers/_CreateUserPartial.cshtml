@@ -1,0 +1,17 @@
+﻿@model List<AccessStatusModel>
+<div class="create-user-container-inner">
+    <label for="CreateUserUserName">User name</label>
+    <input name="CreateUserUserName" id="CreateUserUserName" type="text" />
+    <label for="CreateUserUserPassword">Password</label>
+    <input type="password"
+           autocomplete="new-password"
+           name="CreateUserUserPassword"
+           id="CreateUserUserPassword" />
+    <label for="CeateUserUserStatus">Status</label>
+    <select name="CeateUserUserStatus" id="CeateUserUserStatus">
+        @foreach(var status in Model)
+        {
+            <option statusId ="@status.AccessId" statusName="@status.AccessName">@status.AccessName</option>
+        }
+    </select>
+</div>

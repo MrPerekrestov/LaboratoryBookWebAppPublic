@@ -1,0 +1,35 @@
+﻿@model SelectModel;
+@*@{
+    ViewBag.Title = "Select book";
+    Layout = "./Shared/_LoginLayout";
+    var roteData = new Dictionary<string, string>();
+}*@
+    <div class="login-container transparent" id="select-container">
+        <div class="login-page-title">Select the laboratory book</div>
+        <div class="login-grid">
+            <select name="laboratoryBook" id="selectBook">
+                @foreach (var laboratoryBookName in Model.LaboratoryBooks)
+                {
+                    <option value="@laboratoryBookName">@laboratoryBookName</option>
+                }
+            </select>
+            <button class="ui-button ui-widget ui-corner-all padding-margin" id="btnConnect">Connect</button>
+            
+            @if (Model.UserIsAdminister)
+            {
+                <button class="ui-button ui-widget ui-corner-all padding-margin" id="btnDelete">Delete</button>
+                <button class="ui-button ui-widget ui-corner-all padding-margin" id="btnNew">New</button>
+                <div id="createLaboratoryBookContainer">
+                    <div>
+                        <input type="text" id="newLaboratoryBookNameInput"
+                               spellcheck="false"
+                               placeholder="Enter laboratory book name" />
+                    </div>
+                    <button class="ui-button ui-widget ui-corner-all padding-margin" id="btnCreate">Create</button>
+                </div>
+            }
+        </div>      
+    </div>   
+   
+<script src="~/js/Select.js"></script>
+

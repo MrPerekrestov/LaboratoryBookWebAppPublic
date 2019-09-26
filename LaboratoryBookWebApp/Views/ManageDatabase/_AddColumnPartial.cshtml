@@ -1,0 +1,14 @@
+﻿@model List<string>
+<div class="add-column-container-inner">
+    <label for="addColumnColumnName">Column name</label>
+    <input id="addColumnColumnName" type="text" spellcheck="false">
+    <label for="addColumnColumnType">Column type</label>
+    <input id="addColumnColumnType" type="text" value="varchar(32)" spellcheck="false">
+    <label for="addColumnAfterColumnSelect">After column</label>
+    <select name="addColumnAfterColumnSelect" id="addColumnAfterColumnSelect">
+        @foreach(var columnName in Model)
+        {
+         <option value="@columnName">@columnName</option>
+        }
+    </select>
+</div>

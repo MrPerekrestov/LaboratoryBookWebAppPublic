@@ -1,0 +1,42 @@
+﻿@model LoginModel;
+@{
+    ViewBag.Title = "Login";
+    Layout = "./Shared/_LoginLayout";
+}
+
+<div class="login-container">
+    <form enctype="multipart/form-data" asp-controller="Login" asp-action="Authentication" method="post">
+        <div class="login-page-title">Login to laboratory workbook</div>
+        <div class="login-grid">
+            <label asp-for="UserName">User name</label>
+            <input asp-for="UserName" class="login-input" type="text" placeholder="Enter user name" />
+            <label asp-for="Password" for="password">Password</label>
+            <input asp-for="Password" type="password" placeholder="Enter password" />
+            <span  ></span>
+            <input class="login-button"
+                   type="submit"
+                   name="login"
+                   value="login" />
+
+            @if (ViewBag.ModelIsInvalid != null)
+            {
+                if ((bool)ViewBag.ModelIsInvalid)
+                {
+                    <div class="login-message-red" asp-validation-summary="All">Check your login</div>
+                }
+            }
+            @if (ViewBag.Message == null)
+            {
+                <div class="login-message">Enter login and password, please</div>
+            }
+            else
+            {
+                <div class="login-message-red-center">@ViewBag.Message</div>
+            }
+        </div>
+  
+    </form>
+</div>
+
+
+

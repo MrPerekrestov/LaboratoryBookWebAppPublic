@@ -1,0 +1,18 @@
+﻿@model ManageUsersViewModel
+<div class="manage-users-container-inner">
+    <label for="manageUsersAvailableUsers">Users list</label>
+    <select name="manageUsersAvailableUsers" id="manageUsersAvailableUsers">
+        @foreach(var user in Model.Users)
+        {
+        <option userId ="@user.UserId" userName ="@user.UserName" userStatusId ="@user.UserStatusId">@user.UserName</option>
+        }
+    </select>
+    <label for="manageUsersAvailableStatus">Status</label>
+    <select name="manageUsersAvailableStatus" id="manageUsersAvailableStatus">
+        @foreach(var status in Model.UserStatuses)
+        {
+        <option accessId ="@status.AccessId" accessName ="@status.AccessName">@status.AccessName</option>
+        }
+    </select>
+</div>
+<div class="create-user-container" id="createUserContainer"></div>

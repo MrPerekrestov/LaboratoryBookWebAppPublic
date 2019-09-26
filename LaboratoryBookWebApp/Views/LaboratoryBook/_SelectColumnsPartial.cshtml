@@ -1,0 +1,11 @@
+﻿@model List<string>
+<div class="select-columns-container-inner">
+    @foreach (var columnName in Model)
+    {
+        if (columnName != "permissionID")
+        {
+            <label for="selectColumnCheckBox@(columnName)"> @columnName</label>
+            <input name="selectColumnCheckBox@(columnName)" column-name="@(columnName)" type="checkbox" />
+        }
+    }
+</div>

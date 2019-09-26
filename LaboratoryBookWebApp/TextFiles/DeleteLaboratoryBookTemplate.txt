@@ -1,0 +1,10 @@
+START TRANSACTION;
+DELETE FROM `db_users` WHERE `db_users`.`db_id` = [NewLaboratoryBookId];
+DELETE FROM `statistics` WHERE `statistics`.`db_name` = 'test_db';
+DELETE FROM `db_list` WHERE `db_list`.`db_name` = 'test_db';
+DROP TABLE `laboratory_book_test_db`;
+DROP TABLE `materials_test_db`;
+DROP TABLE `regimes_test_db`;
+DROP TABLE `substrates_test_db`;
+COMMIT;
+

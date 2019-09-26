@@ -1,0 +1,54 @@
+﻿@model DataTable
+@*<link href="~/lib/jquery-datatables/jquery.dataTables.min.css" rel="stylesheet" />
+    <script src="~/lib/jquery-datatables/jquery.dataTables.min.js"></script>*@
+@{
+    var selectList = new[] {
+        "material",
+        "substrate",
+        "operator",
+        "regime",
+        "permissionID"
+    };
+}
+
+<div class="table-container-inner">
+    <table hidden id="samples" style="width:100%" class="display">
+        <thead>
+            <tr>
+                @foreach (DataColumn column in Model.Columns)
+                {
+                    <th>@column.ColumnName</th>
+                }
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id="samplesBody">
+            @foreach (DataRow row in Model.Rows)
+            {
+                <tr row-id="@row[0]">
+                    @foreach (DataColumn column in Model.Columns)
+                    {
+                        if (column.ColumnName == "date")
+                        {
+                            <td data-id="@row[0]" style="white-space: nowrap;" data-type="@column.ColumnName">@(((DateTime)row[column]).ToString("yyyy-MM-dd"))<input hidden spellcheck="false" type="text" value="" /></td>
+                        }
+                        else if (selectList.Contains(column.ColumnName))
+                        {
+                            <td data-id="@row[0]" data-type="@column.ColumnName">
+                                @row[column] <select hidden></select>
+                            </td>
+                        }
+                        else
+                        {
+                            <td style="white-space: nowrap;" data-id="@row[0]" data-type="@column.ColumnName">@row[column]<input hidden spellcheck="false" type="text" value="" /></td>
+                        }
+                    }
+                    <td><button style="color:red" delete-id="@row[0]">x</button></td>
+                </tr>
+            }
+
+        </tbody>
+    </table>    
+</div>
+
+

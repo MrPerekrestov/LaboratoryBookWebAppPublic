@@ -1,0 +1,125 @@
+
+
+
+CREATE TABLE `laboratory_book_test_db` (
+  `sampleID` INT NOT NULL AUTO_INCREMENT,
+  `date` DATE NOT NULL,
+  `material` VARCHAR(32) NULL,
+  `substrate` VARCHAR(32)  NULL,
+  `thickness` VARCHAR(32)  NULL,
+  `depositionTime` TIME NULL,
+  `depositionPressure` VARCHAR(32) NULL,
+  `regime` VARCHAR(32) NULL,  
+  `description` VARCHAR(64) NULL,
+  `operator` VARCHAR(45)  NULL,
+  `permissionID`TINYINT(8) NOT NULL,
+  PRIMARY KEY (`sampleID`),
+  UNIQUE INDEX `sampleID_UNIQUE` (`sampleID` ASC) VISIBLE)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_bin;
+
+
+
+CREATE TABLE `regimes_test_db` (
+  `regime` VARCHAR(32) NOT NULL,
+  PRIMARY KEY (`regime`),
+  UNIQUE INDEX `regime_UNIQUE` (`regime` ASC) VISIBLE)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_bin;
+
+
+
+CREATE TABLE `materials_test_db` (
+  `material` VARCHAR(32) NOT NULL,
+  PRIMARY KEY (`material`),
+  UNIQUE INDEX `material_UNIQUE` (`material` ASC) VISIBLE)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_bin;
+
+
+
+CREATE TABLE `substrates_test_db` (
+  `substrate` VARCHAR(32) NOT NULL,
+  PRIMARY KEY (`substrate`),
+  UNIQUE INDEX `substrate_UNIQUE` (`substrate` ASC) VISIBLE)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_bin;
+
+
+
+INSERT INTO `materials_test_db` (`material`) VALUES ('cobalt');
+
+INSERT INTO `regimes_test_db` (`regime`) VALUES ('DC');
+INSERT INTO `regimes_test_db` (`regime`) VALUES ('RF');
+INSERT INTO `regimes_test_db` (`regime`) VALUES ('HiPIMS');
+INSERT INTO `substrates_test_db` (`substrate`) VALUES ('silicon(111)');
+
+
+
+ALTER TABLE `laboratory_book_test_db`  
+ADD INDEX `fk_permission_test_db_idx` (`permissionID` ASC) VISIBLE;
+
+ALTER TABLE `laboratory_book_test_db` 
+ADD CONSTRAINT `fk_permission_test_db`
+  FOREIGN KEY (`permissionID`)
+  REFERENCES `permission` (`permission_id`)
+  ON DELETE RESTRICT
+  ON UPDATE CASCADE;
+  
+
+ALTER TABLE `laboratory_book_test_db` 
+ADD INDEX `fk_regime_test_db_idx` (`regime` ASC) VISIBLE;
+
+ALTER TABLE `laboratory_book_test_db`  
+ADD CONSTRAINT `fk_regime_test_db`
+  FOREIGN KEY (`regime`)
+  REFERENCES `regimes_test_db` (`regime`)
+  ON DELETE SET NULL
+  ON UPDATE CASCADE;
+  
+
+ALTER TABLE `laboratory_book_test_db` 
+ADD INDEX `fk_material_test_db_idx` (`material` ASC) VISIBLE;
+
+
+ALTER TABLE `laboratory_book_test_db`  
+ADD CONSTRAINT `fk_material_test_db`
+  FOREIGN KEY (`material`)
+  REFERENCES `materials_test_db` (`material`)
+  ON DELETE SET NULL
+  ON UPDATE CASCADE;
+  
+
+
+ALTER TABLE `laboratory_book_test_db` 
+ADD INDEX `fk_substrate_test_db_idx` (`substrate` ASC) VISIBLE;
+
+ALTER TABLE `laboratory_book_test_db`  
+ADD CONSTRAINT `fk_substrate_test_db`
+  FOREIGN KEY (`substrate`)
+  REFERENCES `substrates_test_db` (`substrate`)
+  ON DELETE SET NULL
+  ON UPDATE CASCADE;  
+
+
+ALTER TABLE `laboratory_book_test_db` 
+ADD INDEX `fk_operator_test_db_idx` (`operator` ASC) VISIBLE;
+
+
+ALTER TABLE `laboratory_book_test_db`  
+ADD CONSTRAINT `fk_operator_test_db`
+  FOREIGN KEY (`operator`)
+  REFERENCES `users` (`user_name`)
+  ON DELETE SET NULL
+  ON UPDATE CASCADE;
+
+
+
+
+
+
+

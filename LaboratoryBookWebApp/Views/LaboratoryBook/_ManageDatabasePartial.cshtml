@@ -1,0 +1,77 @@
+﻿<div class="manage-database-container-inner">
+    <div class="manage-database-container-inner-title">Users</div>
+    <div class="manage-database-container-grid">
+        <label class="manage-database-label">Users</label>
+        <select class="manage-database-select ui-corner-all"
+                name="Users"
+                id="manageDatabaseUsersSelect"></select>
+        <button class="ui-button ui-corner-all manage-database-button"
+                id="manageDatabaseRomoveUserButton">
+            Remove
+        </button>
+        <button class="ui-button ui-corner-all manage-database-button"
+                id="addUserToDatabaseButton">
+            Add
+        </button>
+        <label class="manage-database-label">Permission</label>
+        <select class="manage-database-select ui-corner-all" id="manageDatabasePermissionSelect"></select>
+    </div>
+</div>
+<div class="manage-database-container-inner">
+    <div class="manage-database-container-inner-title">Columns</div>
+    <div class="manage-database-container-grid">
+        <label class="manage-database-label">Columns</label>
+        <select class="manage-database-select ui-corner-all"
+                name="Columns"
+                id="manageDatabaseColumnsSelect"></select>
+        <button class="ui-button ui-corner-all manage-database-button"
+                id="removeColumnFromDatabaseButton">
+            Remove
+        </button>
+        <button class="ui-button ui-corner-all manage-database-button"
+                id="addColumnToDatabaseButton">
+            Add
+        </button>
+        <label class="manage-database-label">Name</label>
+        <input class="manage-database-input"
+               type="text"
+               spellcheck="false"
+               id="manageDatabaseColumnName"
+               title="use alphabetic characters, max length is 15 characters" />
+        <div></div>
+        <div></div>
+        <label class="manage-database-label">Data type</label>
+        <input class="manage-database-input"
+               type="text"
+               spellcheck="false"
+               id="manageDatabaseColumnType"
+               title="use float, double, int, varchar types" />
+    </div>
+</div>
+<div class="manage-database-container-inner">
+    <div class="manage-database-container-inner-title">Lists</div>
+    <div class="manage-database-container-grid">
+        <label class="manage-database-label ui-widget ui-corner-all">List</label>
+        <select class="manage-database-select ui-widget ui-corner-all"
+                name="List"
+                id="manageDatabaseLists">
+            <option value="material">material</option>
+            <option value="regime">regime</option>
+            <option value="substrate">substrate</option>
+        </select>
+        <button class="ui-button ui-corner-all manage-database-button"
+                id="removeListValueFromDatabaseButton">
+            Remove
+        </button>
+        <button class="ui-button ui-corner-all manage-database-button"
+                id="manageDatabaseAddListValueButton">
+            Add
+        </button>
+        <label class="manage-database-label ui-widget ui-corner-all">List values</label>
+        <select class="manage-database-select ui-widget ui-corner-all" id="manageDatabaseListValues"></select>
+        <input class="manage-database-input" type="text" spellcheck="false" id="manageDatabaseListValue" />
+    </div>
+</div>
+<div class="add-user-container-outer" id="addUserContainerOuter" title="Add user"></div>
+<div class="add-column-container-outer" id="addColumnContainerOuter" title="Add column"></div>
+<div class="add-listvalue-container-outer" id="addListValueContainerOuter" title="Add list value"></div>

@@ -1,0 +1,17 @@
+﻿@model ManageDatabaseAddUserModel
+    <div class="add-user-container-inner">
+        <label for="addUserUserSelect">User list </label>
+        <select name="addUserUserSelect" id="addUserUserSelect">
+            @foreach (ManageDatabaseUserInfoModel userInfo in Model.Users)
+            {
+              <option userid="@userInfo.UserID" name="@userInfo.UserName">@userInfo.UserName</option>
+            }
+        </select>
+        <label for="addUserPermissionSelect">Permission id </label>
+        <select name="addUserPermissionSelect" id="addUserPermissionSelect">
+            @foreach (var permissionId in Model.PermissionIds)
+            {
+              <option value="@permissionId">@permissionId</option>
+            }
+        </select>
+    </div>

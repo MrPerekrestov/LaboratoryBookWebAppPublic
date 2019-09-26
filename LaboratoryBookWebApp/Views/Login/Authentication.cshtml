@@ -1,0 +1,59 @@
+﻿@model LoginModel;
+@{
+    ViewBag.Title = "Login";
+    Layout = "./Shared/_LoginLayout";
+}
+
+
+<div dat class="login-container transparent" id="lgn-container">
+
+    <div class="login-page-title">Login to laboratory workbook</div>
+    <div class="login-grid">
+        <label asp-for="UserName">User name</label>
+        <input asp-for="UserName"
+               class="login-input"
+               type="text"
+               spellcheck="false"
+               placeholder="Enter user name" />
+        <label asp-for="Password" for="password">Password</label>
+        <input asp-for="Password" type="password"
+               placeholder="Enter password" />
+        <span></span>
+        <input class="ui-button ui-widget ui-corner-all"
+               type="button"
+               id="submit"
+               name="login"
+               value="login" />
+
+        <div class="login-message">Enter login and password, please</div>
+
+    </div>
+</div>
+<div id="myPartialContainer"></div>
+
+<div class="error-dialog" id="ErrorDialog" title="Error">
+    <img class="dialog-icon" src="~/images/error-icon.png" alt="ErrorIcon" width="50" height="50" />
+    <div style="text-align:center">
+        <p id="ErrorMessage"></p>
+    </div>
+</div>
+
+<div class="question-dialog" id="questionDialog" title="Dialog">
+    <img class="dialog-icon" src="~/images/question-dialog-icon.png" alt="QuestionIcon" width="50" height="50" />
+    <div style="text-align:center">
+        <p id="questionDialogMessage"></p>
+    </div>
+</div>
+
+<div id="loadingAnimationContainer">
+    <img src="~/images/loading-animation.gif" width="150" height="150" alt="loading" />
+</div>
+
+<script src="~/js/Login.js"></script>
+
+
+
+
+
+
+
