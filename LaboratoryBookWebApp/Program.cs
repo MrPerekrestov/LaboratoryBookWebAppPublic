@@ -12,15 +12,7 @@ namespace LaboratoryBookWebApp
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-            //.UseKestrel()
-            //.ConfigureKestrel((context, options) =>
-            //{                
-            //    options.Listen(IPAddress.Loopback, 5001, listenOptions =>
-            //    {
-            //        listenOptions.UseHttps();
-            //    });
-            //})
+            WebHost.CreateDefaultBuilder(args)     
             .UseStartup<Startup>();
     }
 }
