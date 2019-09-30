@@ -25,11 +25,7 @@ namespace LaboratoryBookWebApp
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-            }
-
-            app.UseHsts();
-
-            app.UseHttpsRedirection();           
+            }                   
 
             app.UseStaticFiles();
 
